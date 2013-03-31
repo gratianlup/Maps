@@ -305,7 +305,7 @@ public final class LineTree {
          // Check if the line intersect with the nodes region.
          // If not it is guaranteed that it doesn't intersect
          // with the children too and nothing must be done.
-         if(LineIntersectsNode(line, node) == false) {
+         if(!LineIntersectsNode(line, node)) {
              return;
          }
 
@@ -331,7 +331,7 @@ public final class LineTree {
 
      private void RemoveImpl(Line line, Node node) {
          // Verifica daca linia se intersecteaza cu nodul.
-         if(LineIntersectsNode(line, node) == false) {
+         if(!LineIntersectsNode(line, node)) {
              return;
          }
 

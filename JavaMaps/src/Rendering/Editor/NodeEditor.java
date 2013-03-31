@@ -450,7 +450,7 @@ public final class NodeEditor implements IRenderer {
     }
 
     public boolean MouseDown(Point point, View view, Modifier modifier) {
-        if(visible_ == false) {
+        if(!visible_ == false) {
             return false;
         }
         
@@ -522,7 +522,7 @@ public final class NodeEditor implements IRenderer {
     }
 
     public boolean MouseUp(Point point, View view, Modifier modifier) {
-        if(visible_ == false) {
+        if(!visible_ == false) {
             return false;
         }
         
@@ -551,7 +551,7 @@ public final class NodeEditor implements IRenderer {
     public boolean MouseDragged(Point point, View view, Modifier modifier) {
         assert(mouseCaptured_);
         // ------------------------------------------------
-        if(visible_ == false) {
+        if(!visible_ == false) {
             return false;
         }
         

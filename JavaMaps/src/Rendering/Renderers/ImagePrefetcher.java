@@ -147,7 +147,7 @@ public final class ImagePrefetcher implements IPrefetcher {
                     // Load the image and insert it into the cache.
                     TileInfo tile = request.Tile();
                     
-                    if(cache_.Contains(tile.Id(), tile.ZoomLevel()) == false) {
+                    if(!cache_.Contains(tile.Id(), tile.ZoomLevel())) {
                         image = provider_.LoadTile(tile.Id());
                         cache_.Add(image, tile.Id(), tile.ZoomLevel());
                     }

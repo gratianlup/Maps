@@ -82,7 +82,7 @@ public class FileMapProvider implements Serializable, IMapProvider {
              markersPath = location.substring(0,location.lastIndexOf(separator)+1)
                            + "mapMarkers";
             File imagesDir = new File(imagesPath);
-            if(imagesDir.exists() == false)
+            if(!imagesDir.exists())
                  throw new IOException();
         }
         catch(Exception e){
@@ -198,7 +198,7 @@ public class FileMapProvider implements Serializable, IMapProvider {
         boolean found = false;
         // Se parcurg array-urile de Tiles[] pentru toate nivelurile de zoom
         // disponibile.
-        for(int i = 0; i < ZoomLevels() && found == false; i++) {
+        for(int i = 0; i < ZoomLevels() && !found; i++) {
             for(int j = 0; j < image.Level(i).Tiles().length; j++) {
                 if(image.Level(i).GetTile(j).Id().equals(tileID)) {
                     tile = image.Level(i).GetTile(j);

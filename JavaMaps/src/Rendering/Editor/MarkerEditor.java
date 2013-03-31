@@ -254,7 +254,9 @@ public final class MarkerEditor implements IRenderer {
     }
 
     public boolean MouseDown(Point point, View view, Modifier modifier) {
-        if(visible_ == false) return false;
+        if(!visible_) {
+            return false;
+        }
 
         // Search for the marker found at the specified position.
         Point adjPoint = AdjustPoint(point, view);
@@ -315,7 +317,7 @@ public final class MarkerEditor implements IRenderer {
 
     public boolean MouseUp(Point point, View view, Modifier modifier) {
         // Restore the node editor layout.
-        if(visible_ == false) {
+        if(!visible_) {
             return false;
         }
         
@@ -339,7 +341,7 @@ public final class MarkerEditor implements IRenderer {
     public boolean MouseDragged(Point point, View view, Modifier modifier) {
         assert(mouseCaptured_);
         // ------------------------------------------------
-        if(visible_ == false) {
+        if(!visible_) {
             return false;
         }
 
