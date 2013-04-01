@@ -27,8 +27,8 @@ The *Core* and *Data* namespaces were implemented by my colleagues *Bebeselea El
 
 Some of the architecture details are described in the following diagrams:  
 
-**[Download data format details (PDF)](http://www.gratianlup.com/documents/maps_data.pdf)**  
-![Allocator screenshot](http://www.gratianlup.com/documents/maps_format.png)  
+**[Download data format details (PDF)](http://www.gratianlup.com/documents/maps_format.pdf)**  
+![Allocator screenshot](http://www.gratianlup.com/documents/maps_data.png)  
 **[Download main classes details (PDF)](http://www.gratianlup.com/documents/maps_classes.pdf)**  
 ![Allocator screenshot](http://www.gratianlup.com/documents/maps_classes.png)  
 **[Download rendering classes details (PDF)](http://www.gratianlup.com/documents/maps_rendering.pdf)**  
