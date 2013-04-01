@@ -1,7 +1,7 @@
 Maps
 ====
 
-A fairly complex Java aplication for drawing maps supporting mulitple layers of visual elements like  
+A fairly complex Java application for drawing maps supporting multiple layers of visual elements like  
 images, roads and markers (restaurants, hospitals, bus stations, etc.).  
 Done as a final project for the Software Engineering course in second year.  
 The *Core* and *Data* namespaces were implemented by my colleagues *Bebeselea Elena* and *Ramona Maris*.
