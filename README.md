@@ -10,13 +10,16 @@ The *Core* and *Data* namespaces were implemented by my colleagues *Bebeselea El
 
 * Flexible architecture allowing control over the entire rendering process:  
   * Map data and rendering completely decoupled.  
+      * Maps can be stored in data files, received from a web service, etc.
+      * Allows easy implementation of unit tests by creating "random" maps.
+  * Map data loaded on-demand asynchronously, various caching options.
   * New rendering layers can be added easily and the existing ones customized.  
 * Efficient algorithms and data structures for storing and retrieving the visual elements:
-  * PR Bucket Quad-Tree.
-  * Line-Tree.
-  * Douglas-Peucker line simplification algorithm.
-* Caching of map tiles and option to use a lower-resolution version until the image loads.
-* Prefetching of map tile images by estimating the future requests monitoring the map movement.
+  * [PR Bucket Quadtree (used to store markers)](http://en.wikipedia.org/wiki/Quadtree#Point_quadtree)  
+  * [Edge Quadtree (used to store streets)](http://en.wikipedia.org/wiki/Quadtree#Edge_quadtree)  
+  * [Ramer-Douglas-Peucker line simplification algorithm](http://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm)  
+* Caching of map tiles and option to use a scaled lower-resolution version until the image loads.
+* Prefetching of map tile images estimating future requests by monitoring map movement.
 * Animation system used for map movement and zooming, layer visibility changing and many other places.
 * Interpolation when performing a zoom-in/zoom-out action.
 * Editors for creating/editing maps supporting all layer types.
