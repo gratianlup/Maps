@@ -52,8 +52,8 @@ public final class MapControls implements IRenderer {
     private static final double SLIDER_MARGIN_RIGHT = 44;
     private static final double SLIDER_MARGIN_TOP = 118;
 
-    private static final Color SLIDER_BACK_COLOR = new Color(255, 255, 255, 220);
-    private static final Color SLIDER_BUTTON_COLOR = new Color(0, 0, 0, 192);
+    private static final Color SLIDER_BACK_COLOR = new Color(0, 0, 0, 220);
+    private static final Color SLIDER_BUTTON_COLOR = new Color(64, 64, 64, 192);
     private static final Color SLIDER_SELECT_COLOR = new Color(61, 163, 220);
     private static final Color SLIDER_FONT_COLOR = new Color(255, 255, 255, 255);
 

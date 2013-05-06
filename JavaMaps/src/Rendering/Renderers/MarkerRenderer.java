@@ -132,18 +132,18 @@ public final class MarkerRenderer implements IRenderer, IAnimatable {
             // Draw a rectangle around the text.
             int alpha = (int)(255 * animation_.Opacity());
             g.setColor(new Color(189, 223, 147, alpha));
-            g.fillRoundRect(x + iconWidth_ + 4, y,
-                            nameW + 9, nameH + 2, 10, 10);
+            g.fillRoundRect(x + iconWidth_, y,
+                            nameW + 10, nameH + 2, 8, 8);
 
             g.setColor(new Color(90, 90, 90, alpha));
-            g.drawRoundRect(x + iconWidth_ + 4, y,
-                            nameW + 9, nameH + 2, 10, 10);
+            g.drawRoundRect(x + iconWidth_, y,
+                            nameW + 10, nameH + 2, 8, 8);
 
             // Draw the text inside the rectangle.
             g.setColor(new Color(0, 0, 0, alpha));
             g.setFont(nameFont_);
-            g.drawString(name, x + iconWidth_ + 8,
-                               y + (iconHeight_ / 2) + (nameH / 4));
+            g.drawString(name, x + iconWidth_ + 4,
+                               y + nameH - 2);
         }
 
         public MarkerVisual MarkerVisual() { 
@@ -218,13 +218,15 @@ public final class MarkerRenderer implements IRenderer, IAnimatable {
         }
 
         @Override
-        public void Start() { StartWatch(); }
+        public void Start() { 
+            StartWatch(); 
+        }
     }
 
     /*
      ** Constants.
      */
-    private static long ANIMATION_DURATION = 200;
+    private static long ANIMATION_DURATION = 0;
     private static int NAME_SIZE = 14;
 
     /*
@@ -346,11 +348,13 @@ public final class MarkerRenderer implements IRenderer, IAnimatable {
                 // A new marker has been selected, deselect the previous one.
                 if(prevMarker != null) {
                     HideMarkerName(result);
+                    prevMarker = null;
                 }
 
                 ShowMarkerName(result);
-                prevMarker = result;
             }
+            
+            prevMarker = result;
         }
         else {
             if(prevMarker != null) {
@@ -458,7 +462,7 @@ public final class MarkerRenderer implements IRenderer, IAnimatable {
         
         if(nameAnim.Type() == AnimationType.Hide) {
             // The text should not be displayed anymore.
-            host_.Overlay().RemoveOverlay(nameAnim.Marker());
+            host_.Overlay().RemoveOverlay(nameAnim.Marker().Marker());
         }
     }
 

@@ -200,6 +200,7 @@ public class MockMapProvider implements IMapProvider {
 
         Random rand = new Random(19);
         Node prevNode = null;
+        
         for(int i = 0; i < 320; i++) {
             StreetType type;
             int t = rand.nextInt(20);
@@ -222,7 +223,6 @@ public class MockMapProvider implements IMapProvider {
 
                 if(prevNode != null && i % 2 != 0) {
                     prevNode.AddLink(new Link(ObjectId.NewId(), node.Id(), street.Id()));
-                   // node.AddLink(new Link(ObjectId.NewId(), prevNode.Id(), street.Id()));
                 }
 
                 prevNode = node;
@@ -276,17 +276,17 @@ public class MockMapProvider implements IMapProvider {
         AddBezierStreet(new Point(150, 250), new Point(150, 500),
                         new Point(0, 250), new Point(0, 500));
 
-        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(52, 48), "McDonalds"));
-        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(142, 495), "Wendy’s"));
-        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(324, 280), "Taco Bell"));
-        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(528, 535), "Pizza Hut"));
-
-        markers2.add(new Marker(ObjectId.NewId(), new Coordinates(52+256, 48+310), "Starbucks"));
-        markers2.add(new Marker(ObjectId.NewId(), new Coordinates(324+256, 495+310), "Starbucks"));
-        markers2.add(new Marker(ObjectId.NewId(), new Coordinates(528+256, 535+290), "Starbucks"));
-
-        markers3.add(new Marker(ObjectId.NewId(), new Coordinates(200+236, 300+270), "Shell Oil"));
-        markers3.add(new Marker(ObjectId.NewId(), new Coordinates(500+151, 500+180), "Shell Oil"));
+        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(352, 348), "McDonalds"));
+        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(442, 695), "Wendy’s"));
+        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(1324, 1080), "Taco Bell"));
+        markers1.add(new Marker(ObjectId.NewId(), new Coordinates(1528, 1535), "Pizza Hut"));
+//
+//        markers2.add(new Marker(ObjectId.NewId(), new Coordinates(52+256, 48+310), "Starbucks"));
+//        markers2.add(new Marker(ObjectId.NewId(), new Coordinates(324+256, 495+310), "Starbucks"));
+//        markers2.add(new Marker(ObjectId.NewId(), new Coordinates(528+256, 535+290), "Starbucks"));
+//
+//        markers3.add(new Marker(ObjectId.NewId(), new Coordinates(200+236, 300+270), "Shell Oil"));
+//        markers3.add(new Marker(ObjectId.NewId(), new Coordinates(500+151, 500+180), "Shell Oil"));
 
         for(Marker m : markers1) {
             m.SetNearestNode(firstNode.Id());
