@@ -26,6 +26,8 @@ The *Core* and *Data* namespaces were implemented by my colleagues *Bebeselea El
 * Map controls for changing the current view.
 
 
+![SmartFlip screenshot](http://www.gratianlup.com/documents/map.PNG)  
+
 ### Architecture details
 
 Some of the architecture details are described in the following diagrams:  
