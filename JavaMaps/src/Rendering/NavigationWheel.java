@@ -336,7 +336,7 @@ public final class NavigationWheel implements IAnimatable {
 
             // Don't allow the point to move outside the circle.
             if(distance > maxDistance) {
-                maxDistance = distance;
+                distance = maxDistance;
                 double angle = Math.atan2(dy, dx);
                 newX = centerX_ + (maxDistance * Math.cos(angle));
                 newY = centerY_ + (maxDistance * Math.sin(angle));

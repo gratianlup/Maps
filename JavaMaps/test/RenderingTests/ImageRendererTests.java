@@ -251,7 +251,7 @@ public class ImageRendererTests {
     @Test
     public void Test() throws IOException {
         FileMapProvider p = new FileMapProvider();
-        p.Load("C:\\test.map");
+        //p.Load("C:\\test.map");
         TestHost t = new TestHost();
 
         // Adauga nume.
@@ -323,7 +323,8 @@ public class ImageRendererTests {
 
         MapViewer viewer = new MapViewer(t);
         t.SetViewer(viewer);
-        viewer.LoadMap(p);
+//        viewer.LoadMap(p);
+        viewer.LoadMap(new MockMapProvider());
         JFrame frame = WindowUtilities.openInJFrame(t, viewer, 1024, 768);
         boolean moved = false;
         

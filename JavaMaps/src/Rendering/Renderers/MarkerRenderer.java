@@ -265,12 +265,19 @@ public final class MarkerRenderer implements IRenderer, IAnimatable {
         // Try to load the icon used to represent the marker.
         try {
             icon_ = provider_.LoadMarkerIcon(layer.ID());
+            
+            if(icon_ != null) {
+                iconWidth_ = icon_.getWidth((ImageObserver)host);
+                iconHeight_ = icon_.getHeight((ImageObserver)host);
+            }
+            else {
+                iconWidth_ = 0;
+                iconHeight_ = 0;
+            }
         } catch (IOException ex) {
             Logger.getLogger(MarkerRenderer.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        iconWidth_ = icon_.getWidth((ImageObserver)host);
-        iconHeight_ = icon_.getHeight((ImageObserver)host);
         SetOpacity(1.0);
         visibleMarkers_ = new BasicCollection<MarkerVisual>();
 

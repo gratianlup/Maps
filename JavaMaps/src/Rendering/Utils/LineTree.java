@@ -154,14 +154,14 @@ public final class LineTree {
 
         public Node Child(int direction) {
             assert((direction >= DIRECTION_NW) &&
-                   (direction <= DIRECTION_SE));
+                   (direction <= DIRECTION_SW));
             // ------------------------------------------------
             return (Node)children_[direction];
         }
 
         public void SetChild(Node child, int direction) {
             assert((direction >= DIRECTION_NW) &&
-                   (direction <= DIRECTION_SE));
+                   (direction <= DIRECTION_SW));
             // ------------------------------------------------
             children_[direction] = child;
         }
